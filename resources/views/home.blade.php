@@ -63,7 +63,10 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="{{ asset('images/Nanite Hoodies.png') }}" class="d-block w-100" alt="Product 1">
+                            <a href={{ route('show') }}>
+                                <img src="{{ asset('images/Nanite Hoodies.png') }}" class="d-block w-100"
+                                    alt="Product 1">
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <h5>Product 1</h5>
