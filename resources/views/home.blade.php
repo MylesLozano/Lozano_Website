@@ -35,7 +35,7 @@
     <!-- Navbar with logo -->
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href={{ route('index') }}>
                 <img src="{{ asset('images/Spotlight Shop.png') }}" alt="" width="100" height="100"
                     class="d-inline-block align-text-top">
                 <h1 class="ms-3">Spotlight Products Promotion</h1>

@@ -22,6 +22,7 @@
     <nav class="navbar navbar-light">
         <div class="container">
             <div></div>
+            <div></div>
             <div class="bg-info bg-gradient btn">
                 <a href={{ route('home') }} style="text-decoration: none; color:black">
                     Home
@@ -37,6 +38,7 @@
                     Register
                 </a>
             </div>
+            <div></div>
             <div></div>
         </div>
     </nav>
