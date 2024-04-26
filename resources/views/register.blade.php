@@ -18,9 +18,20 @@
                     <h2 class="text-center">Registration Form</h2>
                     <form>
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <label for="fname">First Name:</label>
+                            <input type="text" id="fname" name="fname" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label for="fname">Middle Name:</label>
+                            <input type="text" id="fname" name="fname" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" name="lname" class="form-control">
+                        </div>
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email">
@@ -37,21 +48,8 @@
                             <label for="address">Address</label>
                             <input type="text" class="form-control" id="address">
                         </div>
-                        <div class="form-group">
-                            <label>Gender</label><br>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="male"
-                                    value="male">
-                                <label class="form-check-label" for="male">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="female"
-                                    value="female">
-                                <label class="form-check-label" for="female">Female</label>
-                            </div>
-                        </div>
                     </form>
-                    <a href={{ route('login') }}>
+                    <a href={{ route('login') }} class="pt-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </a>
                 </div>

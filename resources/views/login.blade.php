@@ -19,6 +19,16 @@
                 <h2 class="text-center pt-4">Login to your account</h2>
                 <form>
                     <div class="form-group pt-4">
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname" class="form-control" autofocus>
+                    </div>
+
+                    <div class="form-group pt-4">
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname" class="form-control" autofocus>
+                    </div>
+
+                    <div class="form-group pt-4">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" class="form-control" autofocus>
                     </div>
