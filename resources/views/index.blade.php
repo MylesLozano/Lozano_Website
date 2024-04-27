@@ -24,17 +24,17 @@
             <div></div>
             <div></div>
             <div class="bg-info bg-gradient btn">
-                <a href={{ route('home') }} style="text-decoration: none; color:black">
+                <a href="{{ route('home') }}" style="text-decoration: none; color:black">
                     Home
                 </a>
             </div>
             <div class="bg-info bg-gradient btn">
-                <a href={{ route('login') }} style="text-decoration: none; color:black">
+                <a href="{{ route('login') }}" style="text-decoration: none; color:black">
                     Login
                 </a>
             </div>
             <div class="bg-info bg-gradient btn">
-                <a href={{ route('register') }} style="text-decoration: none; color:black">
+                <a href="{{ route('register') }}" style="text-decoration: none; color:black">
                     Register
                 </a>
             </div>

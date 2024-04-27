@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'same:confirmPassword'],
         ]);
     }
-    protected function create(array $data)
+    public function create(array $data)
     {
         return User::create([
             'firstName' => $data['firstName'],
@@ -33,4 +33,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function register(Request $request)
+    {
+        // Validate user input
+        $this->validator($request->all())->validate();
+
+        // Create a new user based on the request data
+        $this->create($request->all());
+
+        // Redirect to the login page with a success message
+        return redirect()->route('auth.login')->with('success', 'Registration successful!');
+    }
+
 }

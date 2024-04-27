@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center">Registration Form</h2>
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action={{ route('register') }} method="POST">
                         @csrf <!-- Add CSRF token for security -->
 
                         <div class="form-group">
