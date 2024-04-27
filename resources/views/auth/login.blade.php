@@ -29,7 +29,8 @@
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" class="form-control">
                     </div>
-
+                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">Remember Me</label>
                     <button type="submit" class="mt-3 btn btn-primary d-block mx-auto">Login</button>
                 </form>
             </div>

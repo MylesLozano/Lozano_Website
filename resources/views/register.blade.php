@@ -20,7 +20,7 @@
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register.post') }}">
                     @csrf
                     <div class="form-group">
                         <label for="firstName">First Name:</label>
@@ -52,8 +52,8 @@
                     </div>
                     <button type="submit" class="mt-3 btn btn-primary">Register</button>
                 </form>
-            </div> <!-- Added -->
-        </div> <!-- Added -->
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

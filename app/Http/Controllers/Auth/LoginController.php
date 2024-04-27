@@ -18,7 +18,8 @@ class LoginController extends Controller
     {
         // Validate user input and attempt login
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
+        $remember = $request->filled('remember'); // Check if "Remember Me" checkbox is checked
+        if (Auth::attempt($credentials, $remember)) {
             // Authentication successful
             return redirect()->intended('/home');
         } else {
@@ -26,6 +27,7 @@ class LoginController extends Controller
             return redirect()->route('login.index')->with('error', 'Invalid credentials');
         }
     }
+
 
     public function signOut()
     {

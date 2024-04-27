@@ -61,15 +61,15 @@
 
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item me-3">
-                        <a class="nav-link d-flex align-items-center" href="#!">Login</a>
+                        <a class="nav-link d-flex align-items-center" href="{{ route('login.index') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center me-3" href="#!">
+                        <a class="nav-link d-flex align-items-center me-3" href="{{ route('register') }}">
                             <i class="fas fa-bookmark pe-2"></i>Register
                         </a>
                     </li>
                     <li class="nav-item" style="width: 65px;">
-                        <a class="nav-link d-flex align-items-center" href="#!">Home</a>
+                        <a class="nav-link d-flex align-items-center" href="{{ route('home') }}">Home</a>
                     </li>
                 </ul>
             </div>
@@ -77,26 +77,6 @@
         </div>
         <!-- Container wrapper -->
     </nav>
-    <div class="card mt-0 pb-3 text-center">
-        <img class="img-fluid" src="{{ asset('images/Product_Sample2.jpg') }}" alt="Sample Product 1">
-        <div class="card-img-overlay">
-            <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">A shining
-                Spotlight for upcoming
-                local businesses looking for a boost in popularity</p>
-        </div>
-    </div>
-    <div class="card pb-3 text-center">
-        <img class="img-fluid" src="{{ asset('images/Product_Sample1.jpg') }}" alt="Sample Product 2">
-        <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">Connecting
-            consumers to obscure but good quality products flying under their radar</p>
-    </div>
-    <div class="card pb-3 text-center">
-        <img class="img-fluid" src="{{ asset('images/Product_Sample3.jpg') }}" alt="Sample Product 3">
-        <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">Promoting
-            local goods and products,
-            as well as forming a community of sellers and buyers all around</p>
-    </div>
-
     <div class="container mt-5">
         <!-- Product Carousel -->
         <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -172,15 +152,92 @@
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
     </div>
+    <div class="card mt-0 pb-1 text-center">
+        <img class="img-fluid" src="{{ asset('images/Product_Sample2.jpg') }}" alt="Sample Product 1">
+        <div class="card-img-overlay">
+            <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">A shining
+                Spotlight for upcoming
+                local businesses looking for a boost in popularity</p>
+        </div>
     </div>
-    <footer class="mt-5 ms-1">All rights reserved 2024. Powered by LozanoTech Inc.</footer>
+    <div class="card pb-1 text-center">
+        <img class="img-fluid" src="{{ asset('images/Product_Sample1.jpg') }}" alt="Sample Product 2">
+        <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">Connecting
+            consumers to obscure but good quality products flying under their radar</p>
+    </div>
+    <div class="card pb-1 text-center">
+        <img class="img-fluid" src="{{ asset('images/Product_Sample3.jpg') }}" alt="Sample Product 3">
+        <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">Promoting
+            local goods and products,
+            as well as forming a community of sellers and buyers all around</p>
+    </div>
+
+    </div>
+    <footer class="bg-dark text-center text-lg-start text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row my-4">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                        style="width: 150px; height: 150px;">
+                        <img src="{{ asset('images/Spotlight Shop.png') }}" alt="" width="100"
+                            height="100" class="d-inline-block align-text-top">
+                    </div>
+
+                    <p class="text-center">Spotlight Products Promotion</p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">About Us</h5>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Our Socials</h5>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Contact</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-map-marker-alt pe-2"></i>JMCFI, Sasa, Davao City</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone pe-2"></i>+63-2-8123-4567</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope pe-2 mb-0"></i>contact@example.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Copyright:
+            Humphrey Myles C. Lozano
+        </div>
+        <!-- Copyright -->
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

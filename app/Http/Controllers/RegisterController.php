@@ -18,9 +18,10 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'mobileNumber' => ['required', 'digits:11'],
             'address' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'same:confirmPassword'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
     }
+
     public function create(array $data)
     {
         return User::create([
@@ -36,7 +37,6 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-
         // Validate user input
         $this->validator($request->all())->validate();
 
@@ -51,5 +51,4 @@ class RegisterController extends Controller
     {
         return view('register');
     }
-
 }
