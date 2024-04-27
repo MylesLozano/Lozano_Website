@@ -21,17 +21,17 @@
 
                         <div class="form-group">
                             <label for="fname">First Name:</label>
-                            <input type="text" id="fname" name="fname" class="form-control">
+                            <input type="text" id="fname" name="firstName" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="mname">Middle Name:</label>
-                            <input type="text" id="mname" name="mname" class="form-control">
+                            <input type="text" id="mname" name="middleName" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="lname">Last Name:</label>
-                            <input type="text" id="lname" name="lname" class="form-control">
+                            <input type="text" id="lname" name="lastName" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -45,14 +45,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="contact">Contact Number:</label>
-                            <input type="text" class="form-control" id="contact" name="contact">
+                            <label for="mobile">Mobile Number:</label>
+                            <input type="text" class="form-control" id="mobile" name="mobileNumber">
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address:</label>
                             <input type="text" class="form-control" id="address" name="address">
                         </div>
+
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

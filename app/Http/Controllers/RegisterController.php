@@ -17,17 +17,19 @@ class RegisterController extends Controller
             'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'mobileNumber' => ['required', 'digits:11'],
+            'address' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'same:confirmPassword'],
         ]);
     }
     protected function create(array $data)
     {
         return User::create([
-            'first_name' => $data['firstName'],
-            'middle_name' => $data['middleName'],
-            'last_name' => $data['lastName'],
+            'firstName' => $data['firstName'],
+            'middleName' => $data['middleName'],
+            'lastName' => $data['lastName'],
             'email' => $data['email'],
-            'mobile_number' => $data['mobileNumber'],
+            'mobileNumber' => $data['mobileNumber'],
+            'address' => $data['address'],
             'password' => Hash::make($data['password']),
         ]);
     }
