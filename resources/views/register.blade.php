@@ -16,15 +16,17 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center">Registration Form</h2>
-                    <form>
+                    <form action="{{ route('register') }}" method="POST">
+                        @csrf <!-- Add CSRF token for security -->
+
                         <div class="form-group">
                             <label for="fname">First Name:</label>
                             <input type="text" id="fname" name="fname" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="fname">Middle Name:</label>
-                            <input type="text" id="fname" name="fname" class="form-control">
+                            <label for="mname">Middle Name:</label>
+                            <input type="text" id="mname" name="mname" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -33,29 +35,32 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
+
                         <div class="form-group">
-                            <label for="psw">Password</label>
-                            <input type="password" class="form-control" id="psw">
+                            <label for="psw">Password:</label>
+                            <input type="password" class="form-control" id="psw" name="password">
                         </div>
+
                         <div class="form-group">
-                            <label for="contact">Contact Number</label>
-                            <input type="text" class="form-control" id="contact">
+                            <label for="contact">Contact Number:</label>
+                            <input type="text" class="form-control" id="contact" name="contact">
                         </div>
+
                         <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address">
+                            <label for="address">Address:</label>
+                            <input type="text" class="form-control" id="address" name="address">
                         </div>
-                    </form>
-                    <a href={{ route('login') }} class="pt-4">
+
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </a>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
