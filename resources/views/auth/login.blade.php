@@ -1,4 +1,4 @@
-<!-- resources/views/login.blade.php -->
+<!-- resources/views/auth/login.blade.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,19 +14,11 @@
 
 <body>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="mt-5 row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center pt-4">Login to your account</h2>
                 <form method="POST" action="{{ route('login.custom') }}">
-                    <div class="form-group pt-4">
-                        <label for="fname">First Name:</label>
-                        <input type="text" id="fname" name="firstName" class="form-control" autofocus>
-                    </div>
-
-                    <div class="form-group pt-4">
-                        <label for="lname">Last Name:</label>
-                        <input type="text" id="lname" name="lastName" class="form-control" autofocus>
-                    </div>
+                    @csrf
 
                     <div class="form-group pt-4">
                         <label for="email">Email:</label>
@@ -38,7 +30,7 @@
                         <input type="password" id="password" name="password" class="form-control">
                     </div>
 
-                    <button type="submit">Login</button>
+                    <button type="submit" class="mt-3 btn btn-primary d-block mx-auto">Login</button>
                 </form>
             </div>
         </div>

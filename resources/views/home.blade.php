@@ -40,16 +40,6 @@
                     class="d-inline-block align-text-top">
                 <h1 class="ms-3">Spotlight Products Promotion</h1>
             </a>
-            <div class="bg-info bg-gradient btn">
-                <a href={{ route('login') }} style="text-decoration: none; color:black">
-                    Login
-                </a>
-            </div>
-            <div class="bg-info bg-gradient btn">
-                <a href={{ route('register') }} style="text-decoration: none; color:black">
-                    Register
-                </a>
-            </div>
             <div>
 
             </div>

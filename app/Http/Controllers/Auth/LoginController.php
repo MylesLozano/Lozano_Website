@@ -10,7 +10,8 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('auth.login'); // Display the login form
+        return view('auth.login');
+        // Display the login form
     }
 
     public function customLogin(Request $request)
@@ -22,7 +23,7 @@ class LoginController extends Controller
             return redirect()->intended('/home');
         } else {
             // Authentication failed
-            return redirect()->route('login')->with('error', 'Invalid credentials');
+            return redirect()->route('login.index')->with('error', 'Invalid credentials');
         }
     }
 

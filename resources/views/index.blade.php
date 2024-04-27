@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class="bg-info bg-gradient btn">
-                <a href="{{ route('login') }}" style="text-decoration: none; color:black">
+                <a href="{{ route('login.index') }}" style="text-decoration: none; color:black">
                     Login
                 </a>
             </div>

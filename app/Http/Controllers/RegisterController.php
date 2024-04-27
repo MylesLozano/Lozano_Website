@@ -36,6 +36,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+
         // Validate user input
         $this->validator($request->all())->validate();
 
@@ -44,6 +45,11 @@ class RegisterController extends Controller
 
         // Redirect to the login page with a success message
         return redirect()->route('auth.login')->with('success', 'Registration successful!');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('register');
     }
 
 }
