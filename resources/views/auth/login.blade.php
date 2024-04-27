@@ -17,15 +17,15 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center pt-4">Login to your account</h2>
-                <form>
+                <form method="POST" action="{{ route('login.custom') }}">
                     <div class="form-group pt-4">
                         <label for="fname">First Name:</label>
-                        <input type="text" id="fname" name="fname" class="form-control" autofocus>
+                        <input type="text" id="fname" name="firstName" class="form-control" autofocus>
                     </div>
 
                     <div class="form-group pt-4">
                         <label for="lname">Last Name:</label>
-                        <input type="text" id="lname" name="lname" class="form-control" autofocus>
+                        <input type="text" id="lname" name="lastName" class="form-control" autofocus>
                     </div>
 
                     <div class="form-group pt-4">
@@ -37,12 +37,9 @@
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" class="form-control">
                     </div>
+
+                    <button type="submit">Login</button>
                 </form>
-                <div class="form-group pt-4">
-                    <a href={{ route('home') }}>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
