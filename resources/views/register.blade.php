@@ -4,64 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>User Registration</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/Spotlight Shop.png') }}">
-    <title>Registration Page</title>
 </head>
 
 <body>
-    <div class="row mt-5 justify-content-center">
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="text-center">Registration Form</h2>
-                    <form action={{ route('register') }} method="POST">
-                        @csrf <!-- Add CSRF token for security -->
+    <div class="container mt-5">
+        <h1 class="mb-4">User Registration</h1>
 
-                        <div class="form-group">
-                            <label for="fname">First Name:</label>
-                            <input type="text" id="fname" name="firstName" class="form-control">
-                        </div>
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
 
-                        <div class="form-group">
-                            <label for="mname">Middle Name:</label>
-                            <input type="text" id="mname" name="middleName" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="lname">Last Name:</label>
-                            <input type="text" id="lname" name="lastName" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="psw">Password:</label>
-                            <input type="password" class="form-control" id="psw" name="password">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mobile">Mobile Number:</label>
-                            <input type="text" class="form-control" id="mobile" name="mobileNumber">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" class="form-control" id="address" name="address">
-                        </div>
-
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="middleName">Middle Name (optional):</label>
+                <input type="text" id="middleName" name="middleName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
     </div>
-
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
