@@ -61,7 +61,7 @@ class AuthController extends Controller
         if ($remember) {
             return redirect()->route('home');
         } else {
-            return redirect()->route('auth.login');
+            return redirect()->route('index'); // Redirect to index.blade.php
         }
     }
 
