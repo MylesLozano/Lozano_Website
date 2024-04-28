@@ -14,7 +14,7 @@ class AuthController extends Controller
     // Show registration form
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     // Register a new user
@@ -52,10 +52,17 @@ class AuthController extends Controller
     }
 
     // Log out the user
-    public function signOut()
+    public function signOut(Request $request)
     {
+        $remember = $request->filled('remember');
+
         Auth::logout(); // Log out the user
-        return redirect('/');
+
+        if ($remember) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('auth.login');
+        }
     }
 
     // Validator for registration
@@ -66,7 +73,7 @@ class AuthController extends Controller
             'middleName' => ['nullable', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'mobileNumber' => ['required', 'digits:11'],
+            'mobileNumber' => ['required', 'digits:11', 'unique:users'],
             'address' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
         ]);

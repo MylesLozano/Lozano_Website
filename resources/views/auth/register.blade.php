@@ -26,30 +26,59 @@
                         <label for="firstName">First Name:</label>
                         <input type="text" id="firstName" name="firstName" class="form-control" required>
                     </div>
+                    @error('firstName')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="middleName">Middle Name (optional):</label>
                         <input type="text" id="middleName" name="middleName" class="form-control">
                     </div>
+                    @error('middleName')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="lastName">Last Name:</label>
                         <input type="text" id="lastName" name="lastName" class="form-control" required>
                     </div>
+                    @error('lastName')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" class="form-control" required>
                     </div>
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="mobileNumber">Mobile Number:</label>
                         <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" required>
                     </div>
+                    @error('mobileNumber')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="address">Address:</label>
                         <input type="text" id="address" name="address" class="form-control" required>
                     </div>
+                    @error('address')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
                     <div class="form-group">
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" class="form-control" required>
                     </div>
+                    @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
+
                     <button type="submit" class="mt-3 btn btn-primary">Register</button>
                 </form>
                 <div class="mt-3 text-center">

@@ -61,15 +61,16 @@
 
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item me-3">
-                        <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center me-3" href="{{ route('auth.register') }}">
-                            <i class="fas fa-bookmark pe-2"></i>Register
-                        </a>
+                        @if (Auth::check())
+                            <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
+                        @else
+                            <a class="nav-link d-flex align-items-center"
+                                href="{{ route('auth.register') }}">Register</a>
+                        @endif
                     </li>
                     <li class="nav-item" style="width: 65px;">
-                        <a class="nav-link d-flex align-items-center" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link d-flex align-items-center"
+                            href="{{ Auth::check() ? route('home') : (Route::has('auth.register') ? route('auth.register') : route('auth.login')) }}">Home</a>
                     </li>
                 </ul>
             </div>
