@@ -61,10 +61,10 @@
 
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item me-3">
-                        <a class="nav-link d-flex align-items-center" href="{{ route('login.index') }}">Login</a>
+                        <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center me-3" href="{{ route('register') }}">
+                        <a class="nav-link d-flex align-items-center me-3" href="{{ route('auth.register') }}">
                             <i class="fas fa-bookmark pe-2"></i>Register
                         </a>
                     </li>
@@ -77,8 +77,8 @@
         </div>
         <!-- Container wrapper -->
     </nav>
+    <!-- Product Carousel -->
     <div class="container mt-5">
-        <!-- Product Carousel -->
         <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -158,7 +158,8 @@
             </button>
         </div>
     </div>
-    <div class="card mt-0 pb-1 text-center">
+    <!-- Images Start-to-End -->
+    <div class="card pb-1 text-center">
         <img class="img-fluid" src="{{ asset('images/Product_Sample2.jpg') }}" alt="Sample Product 1">
         <div class="card-img-overlay">
             <p class="h2 position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50">A shining
@@ -177,8 +178,9 @@
             local goods and products,
             as well as forming a community of sellers and buyers all around</p>
     </div>
-
+    <!-- Images Start-to-End -->
     </div>
+    <!-- Footer -->
     <footer class="bg-dark text-center text-lg-start text-white">
         <!-- Grid container -->
         <div class="container p-4">
@@ -238,7 +240,7 @@
         </div>
         <!-- Copyright -->
     </footer>
-
+    <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>

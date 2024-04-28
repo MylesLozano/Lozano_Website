@@ -1,5 +1,3 @@
-<!-- resources/views/auth/login.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +15,7 @@
         <div class="mt-5 row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center pt-4">Login to your account</h2>
-                <form method="POST" action="{{ route('login.custom') }}">
+                <form method="POST" action="{{ route('auth.custom.login') }}">
                     @csrf
 
                     <div class="form-group pt-4">
@@ -33,6 +31,9 @@
                     <label class="form-check-label" for="remember">Remember Me</label>
                     <button type="submit" class="mt-3 btn btn-primary d-block mx-auto">Login</button>
                 </form>
+                <div class="mt-3 text-center">
+                    <p>New User? <a href="{{ route('auth.register') }}">Register Here</a></p>
+                </div>
             </div>
         </div>
     </div>

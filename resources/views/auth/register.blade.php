@@ -20,7 +20,7 @@
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
-                <form method="POST" action="{{ route('register.post') }}">
+                <form method="POST" action="{{ route('auth.register.post') }}">
                     @csrf
                     <div class="form-group">
                         <label for="firstName">First Name:</label>
@@ -52,6 +52,9 @@
                     </div>
                     <button type="submit" class="mt-3 btn btn-primary">Register</button>
                 </form>
+                <div class="mt-3 text-center">
+                    <p>Already Registered? <a href="{{ route('auth.login') }}">Login Here</a></p>
+                </div>
             </div>
         </div>
     </div>
