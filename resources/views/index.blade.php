@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Spotlight Products</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/Spotlight Shop.png') }}">
-    <style>
-        /* Adjust carousel image size */
-        #productCarousel img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        a:link {
-            text-decoration: none;
-        }
-
-        a:visited {
-            text-decoration: none;
-        }
-
-        div a {
-            color: black;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 20px;
-        }
-    </style>
-</head>
-
-<body>
+@section('content')
     <!-- Navbar with logo -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Container wrapper -->
@@ -64,8 +33,7 @@
                         @if (Auth::check())
                             <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
                         @else
-                            <a class="nav-link d-flex align-items-center"
-                                href="{{ route('auth.register') }}">Register</a>
+                            <a class="nav-link d-flex align-items-center" href="{{ route('auth.register') }}">Register</a>
                         @endif
                     </li>
                     <li class="nav-item" style="width: 65px;">
@@ -86,8 +54,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <a href={{ route('show') }}>
-                                <img src="{{ asset('images/Nanite Hoodies.png') }}" class="d-block w-100"
-                                    alt="Product 1">
+                                <img src="{{ asset('images/Nanite Hoodies.png') }}" class="d-block w-100" alt="Product 1">
                             </a>
                         </div>
                         <div class="col-md-6">
@@ -242,9 +209,4 @@
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+@endsection

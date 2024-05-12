@@ -48,4 +48,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
+    }
+
+    public function cart()
+    {
+        return $this->hasOne('App\Cart');
+    }
 }
