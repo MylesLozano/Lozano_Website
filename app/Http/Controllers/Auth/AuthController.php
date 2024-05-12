@@ -18,7 +18,7 @@ class AuthController extends Controller
     }
 
     // Register a new user
-    public function register(Request $request)
+    public function register(Request $request, $type)
     {
         // Validate user input
         $this->validator($request->all())->validate();

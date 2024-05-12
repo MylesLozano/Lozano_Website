@@ -33,12 +33,13 @@
                         @if (Auth::check())
                             <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
                         @else
-                            <a class="nav-link d-flex align-items-center" href="{{ route('auth.register') }}">Register</a>
+                            <a class="nav-link d-flex align-items-center"
+                                href="{{ route('auth.register', ['type' => 'type']) }}">Register</a>
                         @endif
                     </li>
                     <li class="nav-item" style="width: 65px;">
                         <a class="nav-link d-flex align-items-center"
-                            href="{{ Auth::check() ? route('home') : (Route::has('auth.register') ? route('auth.register') : route('auth.login')) }}">Home</a>
+                            href="{{ Auth::check() ? route('home') : (Route::has('auth.register') ? route('auth.register', ['type' => 'type']) : route('auth.login')) }}">Home</a>
                     </li>
                 </ul>
             </div>
