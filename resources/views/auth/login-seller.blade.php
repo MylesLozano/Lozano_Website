@@ -4,7 +4,7 @@
     <div class="container">
         <div class="mt-5 row justify-content-center">
             <div class="col-md-6">
-                <h2 class="text-center pt-4">Login to your User account</h2>
+                <h2 class="text-center pt-4">Login to your Seller account</h2>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -17,7 +17,7 @@
                 @if (session('success'))
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
-                <form method="POST" action="{{ route('user.auth.custom.login') }}">
+                <form method="POST" action="{{ route('seller.auth.custom.login') }}">
                     @csrf
 
                     <div class="form-group pt-4">
@@ -40,7 +40,8 @@
                     <button type="submit" class="mt-3 btn btn-primary d-block mx-auto">Login</button>
                 </form>
                 <div class="mt-3 text-center">
-                    <p>New User? <a href="{{ route('user.auth.register') }}">Register Here</a></p>
+                    <p>New Seller? <a href="{{ route('seller.auth.register') }}">Register Here</a>
+                    </p>
                 </div>
             </div>
         </div>

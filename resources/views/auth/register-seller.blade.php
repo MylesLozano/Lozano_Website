@@ -4,31 +4,15 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1 class="mb-4 text-center">User Registration</h1> <!-- Centered -->
+                <h1 class="mb-4 text-center">Seller Registration</h1> <!-- Centered -->
 
-                <form method="POST" action="{{ route('user.auth.register.post') }}">
+                <form method="POST" action="{{ route('seller.auth.register.post') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        <label for="name">Seller Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
                     </div>
-                    @error('firstName')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-
-                    <div class="form-group">
-                        <label for="middleName">Middle Name (optional):</label>
-                        <input type="text" id="middleName" name="middleName" class="form-control">
-                    </div>
-                    @error('middleName')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-
-                    <div class="form-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" required>
-                    </div>
-                    @error('lastName')
+                    @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
 
@@ -41,7 +25,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <label for="mobileNumber">Mobile Number:</label>
+                        <label for="mobileNumber">Phone Number:</label>
                         <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" required>
                     </div>
                     @error('mobileNumber')
@@ -67,7 +51,8 @@
                     <button type="submit" class="mt-3 btn btn-primary">Register</button>
                 </form>
                 <div class="mt-3 text-center">
-                    <p>Already Registered? <a href="{{ route('user.auth.login') }}">Login Here</a></p>
+                    <p>Already Registered? <a href="{{ route('seller.auth.login') }}">Login Here</a>
+                    </p>
                 </div>
             </div>
         </div>

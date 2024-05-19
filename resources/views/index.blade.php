@@ -31,17 +31,18 @@
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item me-3">
                         @if (Auth::check())
-                            <a class="nav-link d-flex align-items-center" href="{{ route('auth.login') }}">Login</a>
+                            @if (Auth::user()->type == 'seller')
+                                <a class="nav-link d-flex align-items-center" href="{{ route('home') }}">Home</a>
+                            @else
+                                <a class="nav-link d-flex align-items-center" href="{{ route('user.home') }}">Home</a>
+                            @endif
+                            <a class="nav-link d-flex align-items-center" href="{{ route('logout') }}">Logout</a>
                         @else
-                            <a class="nav-link d-flex align-items-center"
-                                href="{{ route('auth.register', ['type' => 'type']) }}">Register</a>
+                            <a class="nav-link d-flex align-items-center" href="{{ route('choose-role') }}">Register</a>
                         @endif
                     </li>
-                    <li class="nav-item" style="width: 65px;">
-                        <a class="nav-link d-flex align-items-center"
-                            href="{{ Auth::check() ? route('home') : (Route::has('auth.register') ? route('auth.register', ['type' => 'type']) : route('auth.login')) }}">Home</a>
-                    </li>
                 </ul>
+
             </div>
             <!-- Collapsible wrapper -->
         </div>

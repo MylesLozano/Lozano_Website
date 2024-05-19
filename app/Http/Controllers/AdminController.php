@@ -14,13 +14,23 @@ use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Review;
 use App\Models\Category;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public function index()
     {
+        // If there are no admins in the database, redirect to the 'create' view
+        if (Admin::count() == 0) {
+            return redirect()->route('admin.create');
+        }
+
+        // If there is at least one admin in the database and an admin is not logged in, redirect to the 'login' view
+        if (!Auth::guard('admin')->check()) {
+            return redirect()->route('admin.login');
+        }
+
+        // If an admin is logged in, show the 'index' view
         $admins = Admin::all();
         $users = User::all();
         $images = Image::all();
@@ -33,37 +43,27 @@ class AdminController extends Controller
         $reviews = Review::all();
         $categories = Category::all();
 
-        if ($admins->isEmpty()) {
-            return redirect()->route('admin.create');
-        }
-
         return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'reviews', 'categories'));
     }
 
+
+
+
     public function create()
     {
-        if (Admin::exists()) {
-            return redirect()->route('admin.login');
-        }
-
         return view('admin.create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'password' => ['required', 'min:8', 'regex:/^[A-Z]{2}\d{4}---$/'],
-        ], [
-            'password.regex' => 'Password creation does not meet criteria',
-        ]);
+        $this->validateAdminRequest($request);
 
         Admin::create([
             'name' => $request->name,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('admin.index')->with('success', 'Admin created successfully.');
+        return redirect()->route('admin.login')->with('success', 'Admin created successfully.');
     }
 
     public function show($id)
@@ -80,15 +80,12 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'password' => 'required|min:8',
-        ]);
+        $this->validateAdminRequest($request);
 
         $admin = Admin::findOrFail($id);
         $admin->update([
             'name' => $request->name,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
         ]);
 
         return redirect()->route('admin.index')->with('success', 'Admin updated successfully.');
@@ -99,12 +96,25 @@ class AdminController extends Controller
         $admin = Admin::findOrFail($id);
         $admin->delete();
 
-        return redirect()->route('admin.index')->with('success', 'Admin deleted successfully.');
+        // Redirect to the login page after deleting an admin
+        return redirect()->route('admin.login')->with('success', 'Admin deleted successfully.');
     }
+
 
     public function showLoginForm()
     {
-        return view('admin.login');
+        // If no admin exists in the database, redirect to the 'create' view
+        if (Admin::count() == 0) {
+            return redirect()->route('admin.create');
+        }
+
+        // If an admin exists but is not logged in, show the 'login' view
+        if (!Auth::guard('admin')->check()) {
+            return view('admin.login');
+        }
+
+        // If an admin is logged in, redirect to the 'index' view
+        return redirect()->route('admin.index');
     }
 
     public function login(Request $request)
@@ -112,11 +122,35 @@ class AdminController extends Controller
         $credentials = $request->only('name', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin.index');
+            // If the login is successful, redirect to the 'index' view
+            $admins = Admin::all();
+            $users = User::all();
+            $images = Image::all();
+            $products = Product::all();
+            $sellers = Seller::all();
+            $orders = Order::all();
+            $orderItems = OrderItem::all();
+            $carts = Cart::all();
+            $cartItems = CartItem::all();
+            $reviews = Review::all();
+            $categories = Category::all();
+
+            return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'reviews', 'categories'));
         } else {
             return back()->withErrors([
                 'name' => 'The provided credentials do not match our records.',
             ]);
         }
+    }
+
+
+    private function validateAdminRequest(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'password' => ['required', 'min:8', 'regex:/^[A-Z]{2}\d{4}---$/'],
+        ], [
+            'password.regex' => 'Password creation does not meet criteria',
+        ]);
     }
 }

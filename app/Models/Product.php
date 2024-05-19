@@ -13,26 +13,26 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'seller_id', // Add this if your products table has a seller_id column
+        'seller_id',
     ];
 
     public function images()
     {
-        return $this->hasMany('App\Image');
+        return $this->hasMany(Image::class);
     }
 
     public function categories()
     {
-        return $this->belongsToMany('App\Category');
+        return $this->belongsToMany(Category::class);
     }
 
     public function reviews()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany(Review::class);
     }
 
     public function seller()
     {
-        return $this->belongsTo('App\Seller');
+        return $this->belongsTo(Seller::class, 'seller_id');
     }
 }

@@ -30,7 +30,7 @@
                 <ul></ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item me-3">
-                        <a class="nav-link d-flex align-items-center" href="{{ route('auth.signout') }}">Sign Out</a>
+                        <a class="nav-link d-flex align-items-center" href="{{ route('seller.auth.logout') }}">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -38,4 +38,35 @@
         </div>
         <!-- Container wrapper -->
     </nav>
+
+    <h1 class="text-center mt-4">Welcome, Seller {{ $seller->name }}!</h1>
+
+    <!-- Add Product Form -->
+    <div class="container mt-5">
+        <form action="{{ route('product.add') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Product Description</label>
+                <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Product Price</label>
+                <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="images" class="form-label">Product Images</label>
+                <input type="file" class="form-control" id="images" name="images[]" multiple required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+
+    <!-- Button to redirect to products -->
+    <div class="container mt-5 text-center">
+        <a href="{{ route('products.getProducts') }}" class="btn btn-primary btn-lg">View My Products</a>
+    </div>
 @endsection
