@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container position-absolute top-50 start-50 translate-middle">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Admin Login</div>
+                    <div class="card-header text-bg-primary">Admin Login</div>
 
                     <div class="card-body">
                         @if ($errors->any())
@@ -22,7 +22,8 @@
                         @endif
                         <form method="POST" action="{{ route('admin.login') }}">
                             @csrf
-
+                            <img src="{{ asset('images/Spotlight Shop.png') }}" alt="" width="100" height="100"
+                                style="display: block; margin: 0 auto;">
                             <div class="form-group pt-4">
                                 <label for="name">Name:</label>
                                 <input type="text" id="name" name="name" class="form-control" autofocus>
@@ -40,7 +41,9 @@
                             </div>
                             <input type="checkbox" class="form-check-input" id="remember" name="remember">
                             <label class="form-check-label" for="remember">Remember Me</label>
-                            <button type="submit" class="mt-3 btn btn-primary d-block mx-auto">Login</button>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="mt-3 btn btn-primary">Login</button>
+                            </div>
                         </form>
                         <div class="mt-3 text-center">
                             <p>New Admin? <a href="{{ route('admin.create') }}">Register Here</a></p>

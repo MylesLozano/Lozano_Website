@@ -43,6 +43,10 @@
                     <p>New Seller? <a href="{{ route('seller.auth.register') }}">Register Here</a>
                     </p>
                 </div>
+                <div class="mt-3 text-center">
+                    <p><a href="{{ route('index') }}">Back to Home</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

@@ -23,6 +23,11 @@
                     value="{{ $product->price }}" required>
             </div>
             <div class="mb-3">
+                <label for="quantity" class="form-label">Product Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" value="{{ $product->quantity }}"
+                    required>
+            </div>
+            <div class="mb-3">
                 <label for="images" class="form-label">Product Images</label>
                 <input type="file" class="form-control" id="images" name="images[]" multiple>
             </div>

@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container position-absolute top-50 start-50 translate-middle">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Create Admin</div>
+                    <div class="card-header text-bg-primary">Create Admin</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.store') }}">
                             @csrf
-
+                            <img src="{{ asset('images/Spotlight Shop.png') }}" alt="" width="100" height="100"
+                                style="display: block; margin: 0 auto;">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
@@ -26,9 +27,14 @@
                                     </span>
                                 @enderror
                             </div>
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            </div>
                         </form>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <p><a href="{{ route('index') }}">Back to Home</a>
+                        </p>
                     </div>
                 </div>
             </div>

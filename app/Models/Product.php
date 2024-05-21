@@ -13,6 +13,7 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'quantity',
         'seller_id',
     ];
 
@@ -24,11 +25,6 @@ class Product extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class);
-    }
-
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
     }
 
     public function seller()
