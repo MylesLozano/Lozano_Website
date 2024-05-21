@@ -12,7 +12,6 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Cart;
 use App\Models\CartItem;
-use App\Models\Review;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,14 +39,10 @@ class AdminController extends Controller
         $orderItems = OrderItem::all();
         $carts = Cart::all();
         $cartItems = CartItem::all();
-        $reviews = Review::all();
         $categories = Category::all();
 
-        return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'reviews', 'categories'));
+        return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'categories'));
     }
-
-
-
 
     public function create()
     {
@@ -132,10 +127,9 @@ class AdminController extends Controller
             $orderItems = OrderItem::all();
             $carts = Cart::all();
             $cartItems = CartItem::all();
-            $reviews = Review::all();
             $categories = Category::all();
 
-            return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'reviews', 'categories'));
+            return view('admin.index', compact('admins', 'users', 'images', 'products', 'sellers', 'orders', 'orderItems', 'carts', 'cartItems', 'categories'));
         } else {
             return back()->withErrors([
                 'name' => 'The provided credentials do not match our records.',

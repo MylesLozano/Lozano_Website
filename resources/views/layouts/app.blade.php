@@ -3,7 +3,12 @@
 
 @include('includes.head')
 
-<body>
+<body
+    style="background-image: url('{{ asset('images/BG-Roles.jpg') }}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;">
 
     @yield('content')
 

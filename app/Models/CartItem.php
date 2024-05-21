@@ -17,11 +17,11 @@ class CartItem extends Model
 
     public function cart()
     {
-        return $this->belongsTo('App\Cart');
+        return $this->belongsTo(Cart::class);
     }
 
     public function product()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo(Product::class);
     }
 }

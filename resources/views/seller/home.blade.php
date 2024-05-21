@@ -58,6 +58,10 @@
                 <input type="number" step="0.01" class="form-control" id="price" name="price" required>
             </div>
             <div class="mb-3">
+                <label for="quantity" class="form-label">Product Quantity</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" required>
+            </div>
+            <div class="mb-3">
                 <label for="images" class="form-label">Product Images</label>
                 <input type="file" class="form-control" id="images" name="images[]" multiple required>
             </div>
@@ -65,8 +69,9 @@
         </form>
     </div>
 
+
     <!-- Button to redirect to products -->
-    <div class="container mt-5 text-center">
-        <a href="{{ route('products.getProducts') }}" class="btn btn-primary btn-lg">View My Products</a>
+    <div class="container mb-5 text-center">
+        <a href="{{ route('products.showProducts') }}" class="btn btn-primary btn-lg">View My Products</a>
     </div>
 @endsection
